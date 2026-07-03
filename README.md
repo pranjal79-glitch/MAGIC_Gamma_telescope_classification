@@ -162,3 +162,6 @@ Bock, R. (2004). MAGIC Gamma Telescope [Dataset]. UCI Machine Learning Repositor
 
 # Conclusion
 In this study, we systematiclly evaluated variouos classification architectures in order to distinguish between the high energy Gamma particles and the background Hadronic showers. The results confirm that Neural Network with it's non-linear feature mapping capabilities, achieves the highest classification accuracy of 87% in contrast to the traditional models in k Nearest Neighbors and Naive Bayes. <br> This is indicative of complex non-linear relationships between the Hillas parameters are best captured by the high-capacity models.
+
+## Accessing the Code
+The full analysis and model training can be found in the [notebook/MAGIC_Gamma_Telescope.ipynb](notebook/MAGIC_Gamma_Telescope.ipynb) file.
