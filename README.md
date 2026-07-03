@@ -3,7 +3,7 @@ The project applies machine learning classification on the MAGIC Gamma Telescope
 
 # Overview of the Problem
 
-The data are Monte Carlo generated to simulate the registration of high energy gamma aprticles in the ground-based atmospheric Cherenkov gamma telescope using imaging technique.
+The data are Monte Carlo generated to simulate the registration of high energy gamma particles in the ground-based atmospheric Cherenkov gamma telescope using imaging technique.
 When high-energy gamma rays enter the atmosphere, they initiate electromagnetic showers. Charged particles within these showers emit Cherenkov radiation (visible to UV wavelengths). This radiation leaks through the atmosphere and is recorded by photomultiplier tubes in the telescope's camera. 
 In the generation of this dataset, researchers applied Principal Component Analysis (PCA) to the camera plane to derive the characteristics of the elongated cluster images. These features are known as Hillas parameters (e.g., image extent, asymmetry, and total depositions).
 
@@ -18,10 +18,10 @@ The program was run with parameters allowing to observe events with energies dow
 
 The Dataset has no missing values.
 
-Instances: 19020
-Number of features: 10
+Instances: 19020 <br> 
+Number of features: 10 <br>
 
-Variable table
+### Variable table
 <table>
   <tr>
     <th>Variable Name</th>
@@ -30,7 +30,7 @@ Variable table
     <th>Description</th>
   </tr>
   <tr>
-    <td>fLeangth</td>
+    <td>fLength</td>
     <td>Feature</td>
     <td>Continuous</td>
     <td>major axis of ellipse</td>
@@ -96,7 +96,7 @@ Variable table
     <td>gamma (signal), hadron (background)</td>
   </tr>
 </table>
-
+<br>
 *We have excluded the units for some of the features noted in the table above
 
 ## License
@@ -107,6 +107,7 @@ This allows for the sharing and adaptation of the datasets for any purpose, prov
 1. We first mapped the class variable into binary integers and then split the data into Training set(60%), Validation Set(20%) and a Test Set(20%).
 2. Standardization was applied to all the features
 3. The minority class in the training set was oversampled using `Random Over-Sampling` (RandomOverSampler) to prevent model bias toward the dominant class.
+<br>
 **In the real data, the h class represents the majority class
 
 # Models Evaluated
@@ -114,10 +115,9 @@ This allows for the sharing and adaptation of the datasets for any purpose, prov
 2. Naive Bayes: Gaussian Naive Bayes Classifier
 3. Logistic regression: Standard Logistic regressor
 4. Support Vector Machine Classifier:
-5. Neural Network: 5 layer Neural network with 2 Dense layers with variable neurons nad ReLu activation, 2 Dropout layer and 1 output Dense layer with sigmoid activation.
-   We performed a grid search to further tune the hyperparameters of the neural network.
+5. Neural Network: 5 layer Neural network with 2 Dense layers with variable neurons nad ReLu activation, 2 Dropout layer and 1 output Dense layer with sigmoid activation. <br> We performed a grid search to further tune the hyperparameters of the neural network.
 
-# Emperical Results
+# Empirical Results
 <table>
   <tr>
     <th>Classifier</th>
@@ -126,7 +126,7 @@ This allows for the sharing and adaptation of the datasets for any purpose, prov
     <th>F1- Score (Hadron)</th>
   </tr>
   <tr>
-    <td>Neural Netwrok</td>
+    <td>Neural Network</td>
     <td>87%</td>
     <td>0.81</td>
     <td>0.91</td>
@@ -159,3 +159,6 @@ This allows for the sharing and adaptation of the datasets for any purpose, prov
 
 # Citation
 Bock, R. (2004). MAGIC Gamma Telescope [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C52C8B.
+
+# Conclusion
+In this study, we systematiclly evaluated variouos classification architectures in order to distinguish between the high energy Gamma particles and the background Hadronic showers. The results confirm that Neural Network with it's non-linear feature mapping capabilities, achieves the highest classification accuracy of 87% in contrast to the traditional models in k Nearest Neighbors and Naive Bayes. <br> This is indicative of complex non-linear relationships between the Hillas parameters are best captured by the high-capacity models.
